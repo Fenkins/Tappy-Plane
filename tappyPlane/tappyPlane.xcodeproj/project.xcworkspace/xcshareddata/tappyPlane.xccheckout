@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A70AD258-3098-4AFC-9EA7-BE08236749A7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>tappyPlane</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CCF08C73D259E5F732ACB2C544B37B425C83CB48</key>
+		<string>https://github.com/Fenkins/Tappy-Plane.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>tappyPlane/tappyPlane.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CCF08C73D259E5F732ACB2C544B37B425C83CB48</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Fenkins/Tappy-Plane.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CCF08C73D259E5F732ACB2C544B37B425C83CB48</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CCF08C73D259E5F732ACB2C544B37B425C83CB48</string>
+			<key>IDESourceControlWCCName</key>
+			<string>tappyPlane</string>
+		</dict>
+	</array>
+</dict>
+</plist>
