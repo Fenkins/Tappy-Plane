@@ -9,6 +9,8 @@
 #import "TPPlane.h"
 
 @interface TPPlane()
+
+// Array of actions
 @property (nonatomic) NSMutableArray* planeAnimations;
 @end
 
@@ -27,8 +29,13 @@
         for (NSString* key in animations) {
             [self.planeAnimations addObject:[self animationFromArray:[animations objectForKey:key] withDuration:0.4]];
         }
+        [self setRandomColor];
     }
     return self;
+}
+
+-(void)setRandomColor {
+    [self runAction:[self.planeAnimations objectAtIndex:arc4random_uniform(self.planeAnimations.count)]];
 }
 
 -(SKAction*)animationFromArray:(NSArray*)textureNames withDuration:(CGFloat)duration {
