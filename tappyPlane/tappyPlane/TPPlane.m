@@ -8,13 +8,25 @@
 
 #import "TPPlane.h"
 
+@interface TPPlane()
+@property (nonatomic) NSMutableArray* planeAnimations;
+@end
+
 @implementation TPPlane
 
 - (instancetype)init
 {
     self = [super initWithImageNamed:@"planeBlue1@2x"];
     if (self) {
-
+        // Init array to hold animations in it
+        _planeAnimations = [[NSMutableArray alloc]init];
+        
+        // Load animation plist file
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"PlaneAnimations" ofType:@"plist"];
+        NSDictionary *animations = [NSDictionary dictionaryWithContentsOfFile:path];
+        for (NSString* key in animations) {
+            [self.planeAnimations addObject:[self animationFromArray:[animations objectForKey:key] withDuration:0.4]];
+        }
     }
     return self;
 }
