@@ -19,6 +19,9 @@
 		AA246CE51BB03B5D004C4081 /* tappyPlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA246CE41BB03B5D004C4081 /* tappyPlaneTests.m */; };
 		AA246CF01BB03BE9004C4081 /* TPGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AA246CEF1BB03BE9004C4081 /* TPGameScene.m */; };
 		AA246CF21BB03E7B004C4081 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA246CF11BB03E7B004C4081 /* Entitlements.plist */; };
+		AA9FB96F1BB5D3AB0071C666 /* Aliens.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AA9FB96E1BB5D3AA0071C666 /* Aliens.atlas */; };
+		AA9FB9711BB5D3E30071C666 /* AlienAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA9FB9701BB5D3E30071C666 /* AlienAnimations.plist */; };
+		AA9FB9741BB5D7BA0071C666 /* TPAlien.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9FB9731BB5D7BA0071C666 /* TPAlien.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,10 @@
 		AA246CEE1BB03BE9004C4081 /* TPGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGameScene.h; sourceTree = "<group>"; };
 		AA246CEF1BB03BE9004C4081 /* TPGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameScene.m; sourceTree = "<group>"; };
 		AA246CF11BB03E7B004C4081 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = ../Entitlements.plist; sourceTree = "<group>"; };
+		AA9FB96E1BB5D3AA0071C666 /* Aliens.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Aliens.atlas; sourceTree = "<group>"; };
+		AA9FB9701BB5D3E30071C666 /* AlienAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AlienAnimations.plist; sourceTree = "<group>"; };
+		AA9FB9721BB5D7BA0071C666 /* TPAlien.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAlien.h; sourceTree = "<group>"; };
+		AA9FB9731BB5D7BA0071C666 /* TPAlien.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAlien.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				AA1AC2281BB3043D00D2C07B /* PlaneAnimations.plist */,
+				AA9FB9701BB5D3E30071C666 /* AlienAnimations.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -101,6 +109,7 @@
 		AA246CC21BB03B5C004C4081 /* tappyPlane */ = {
 			isa = PBXGroup;
 			children = (
+				AA9FB96E1BB5D3AA0071C666 /* Aliens.atlas */,
 				AA0EAE171BB1DD6500BC9835 /* Planes.atlas */,
 				AA246CC71BB03B5C004C4081 /* AppDelegate.h */,
 				AA246CC81BB03B5C004C4081 /* AppDelegate.m */,
@@ -111,6 +120,8 @@
 				AA246CD21BB03B5C004C4081 /* Main.storyboard */,
 				AA0EAE191BB1EBA400BC9835 /* TPPlane.h */,
 				AA0EAE1A1BB1EBA400BC9835 /* TPPlane.m */,
+				AA9FB9721BB5D7BA0071C666 /* TPAlien.h */,
+				AA9FB9731BB5D7BA0071C666 /* TPAlien.m */,
 				AA246CD51BB03B5C004C4081 /* Images.xcassets */,
 				AA246CD71BB03B5C004C4081 /* LaunchScreen.xib */,
 				AA246CC31BB03B5C004C4081 /* Supporting Files */,
@@ -229,6 +240,8 @@
 				AA246CF21BB03E7B004C4081 /* Entitlements.plist in Resources */,
 				AA246CD91BB03B5C004C4081 /* LaunchScreen.xib in Resources */,
 				AA1AC2291BB3043D00D2C07B /* PlaneAnimations.plist in Resources */,
+				AA9FB9711BB5D3E30071C666 /* AlienAnimations.plist in Resources */,
+				AA9FB96F1BB5D3AB0071C666 /* Aliens.atlas in Resources */,
 				AA246CD61BB03B5C004C4081 /* Images.xcassets in Resources */,
 				AA0EAE181BB1DD6500BC9835 /* Planes.atlas in Resources */,
 				AA246CD41BB03B5C004C4081 /* Main.storyboard in Resources */,
@@ -250,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA246CD11BB03B5C004C4081 /* GameViewController.m in Sources */,
+				AA9FB9741BB5D7BA0071C666 /* TPAlien.m in Sources */,
 				AA246CC91BB03B5C004C4081 /* AppDelegate.m in Sources */,
 				AA246CC61BB03B5C004C4081 /* main.m in Sources */,
 				AA0EAE1B1BB1EBA400BC9835 /* TPPlane.m in Sources */,

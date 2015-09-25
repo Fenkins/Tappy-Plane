@@ -8,10 +8,12 @@
 
 #import "TPGameScene.h"
 #import "TPPlane.h"
+#import "TPAlien.h"
 
 @interface TPGameScene ()
 
 @property (nonatomic) TPPlane *player;
+@property (nonatomic) TPAlien *alien;
 @property (nonatomic) SKNode *world;
 
 @end
@@ -29,13 +31,21 @@
         _player = [[TPPlane alloc]init];
         _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
         [_world addChild:_player];
+        
+        // Setup alien
+        _alien = [[TPAlien alloc]init];
+        _alien.position = CGPointMake(self.size.width * 0.5 + _alien.size.width, self.size.height * 0.5);
+        [_world addChild:_alien];
+        
     }
     return self;
 }
 
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     for (UITouch *touch in touches) {
         [self.player setRandomColor];
+        [self.alien changeAlien];
     }
 }
 
