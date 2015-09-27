@@ -23,6 +23,9 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        // Setup physics
+        self.physicsWorld.gravity = CGVectorMake(0.0, -5.5);
+        
         // Setup world
         _world = [[SKNode alloc]init];
         [self addChild:_world];
@@ -30,12 +33,14 @@
         // Setup player
         _player = [[TPPlane alloc]init];
         _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+        _player.engineRunning = YES;
+        _player.physicsBody.affectedByGravity = NO;
         [_world addChild:_player];
         
         // Setup alien
-        _alien = [[TPAlien alloc]init];
-        _alien.position = CGPointMake(self.size.width * 0.5 + _alien.size.width, self.size.height * 0.5);
-        [_world addChild:_alien];
+//        _alien = [[TPAlien alloc]init];
+//        _alien.position = CGPointMake(self.size.width * 0.5 + _alien.size.width, self.size.height * 0.5);
+//        [_world addChild:_alien];
         
     }
     return self;
@@ -44,9 +49,17 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     for (UITouch *touch in touches) {
-        self.player.engineRunning = !self.player.engineRunning;
-        [self.player setRandomColor];
-        [self.alien changeAlien];
+//        self.player.engineRunning = !self.player.engineRunning;
+//        [self.player setRandomColor];
+//        [self.alien changeAlien];
+        self.player.accelerating = YES;
+        self.player.physicsBody.affectedByGravity = YES;
+    }
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        self.player.accelerating = NO;
     }
 }
 
