@@ -19,6 +19,7 @@
 		AA246CE51BB03B5D004C4081 /* tappyPlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA246CE41BB03B5D004C4081 /* tappyPlaneTests.m */; };
 		AA246CF01BB03BE9004C4081 /* TPGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AA246CEF1BB03BE9004C4081 /* TPGameScene.m */; };
 		AA246CF21BB03E7B004C4081 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA246CF11BB03E7B004C4081 /* Entitlements.plist */; };
+		AA3737ED1BB8394200F7AB2E /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = AA3737EB1BB8394200F7AB2E /* PlanePuffTrail.sks */; };
 		AA9FB96F1BB5D3AB0071C666 /* Aliens.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AA9FB96E1BB5D3AA0071C666 /* Aliens.atlas */; };
 		AA9FB9711BB5D3E30071C666 /* AlienAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA9FB9701BB5D3E30071C666 /* AlienAnimations.plist */; };
 		AA9FB9741BB5D7BA0071C666 /* TPAlien.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9FB9731BB5D7BA0071C666 /* TPAlien.m */; };
@@ -55,6 +56,7 @@
 		AA246CEE1BB03BE9004C4081 /* TPGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGameScene.h; sourceTree = "<group>"; };
 		AA246CEF1BB03BE9004C4081 /* TPGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameScene.m; sourceTree = "<group>"; };
 		AA246CF11BB03E7B004C4081 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = ../Entitlements.plist; sourceTree = "<group>"; };
+		AA3737EB1BB8394200F7AB2E /* PlanePuffTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlanePuffTrail.sks; sourceTree = "<group>"; };
 		AA9FB96E1BB5D3AA0071C666 /* Aliens.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Aliens.atlas; sourceTree = "<group>"; };
 		AA9FB9701BB5D3E30071C666 /* AlienAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AlienAnimations.plist; sourceTree = "<group>"; };
 		AA9FB9721BB5D7BA0071C666 /* TPAlien.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAlien.h; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		AA246CC21BB03B5C004C4081 /* tappyPlane */ = {
 			isa = PBXGroup;
 			children = (
+				AA3737EA1BB838FA00F7AB2E /* Particle Effects */,
 				AA9FB96E1BB5D3AA0071C666 /* Aliens.atlas */,
 				AA0EAE171BB1DD6500BC9835 /* Planes.atlas */,
 				AA246CC71BB03B5C004C4081 /* AppDelegate.h */,
@@ -155,6 +158,14 @@
 				AA246CE31BB03B5D004C4081 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA3737EA1BB838FA00F7AB2E /* Particle Effects */ = {
+			isa = PBXGroup;
+			children = (
+				AA3737EB1BB8394200F7AB2E /* PlanePuffTrail.sks */,
+			);
+			name = "Particle Effects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 			files = (
 				AA246CF21BB03E7B004C4081 /* Entitlements.plist in Resources */,
 				AA246CD91BB03B5C004C4081 /* LaunchScreen.xib in Resources */,
+				AA3737ED1BB8394200F7AB2E /* PlanePuffTrail.sks in Resources */,
 				AA1AC2291BB3043D00D2C07B /* PlaneAnimations.plist in Resources */,
 				AA9FB9711BB5D3E30071C666 /* AlienAnimations.plist in Resources */,
 				AA9FB96F1BB5D3AB0071C666 /* Aliens.atlas in Resources */,
