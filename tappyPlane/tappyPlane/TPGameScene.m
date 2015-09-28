@@ -63,4 +63,8 @@
     }
 }
 
+-(void)update:(NSTimeInterval)currentTime {
+    [self.player update];
+}
+
 @end

@@ -70,6 +70,12 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     }
 }
 
+-(void)update {
+    if (self.accelerating) {
+        [self.physicsBody applyForce:CGVectorMake(0.0, 100.0)];
+    }
+}
+
 -(SKAction*)animationFromArray:(NSArray*)textureNames withDuration:(CGFloat)duration {
     // Create array to hold textures
     NSMutableArray *frames = [[NSMutableArray alloc]init];
