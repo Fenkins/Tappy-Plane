@@ -11,7 +11,9 @@
 @implementation TPScrollingNode
 
 -(void)updateWithTimeElapsed:(NSTimeInterval)timeElapsed {
-    self.position = CGPointMake(self.position.x + self.horyzontalScrollSpeed * timeElapsed, self.position.y);
+    if (self.scrolling) {
+        self.position = CGPointMake(self.position.x + self.horyzontalScrollSpeed * timeElapsed, self.position.y);
+    }
 }
 
 @end
