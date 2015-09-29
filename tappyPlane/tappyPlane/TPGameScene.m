@@ -33,10 +33,12 @@
         // Setup player
         _player = [[TPPlane alloc]init];
         _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
-        _player.engineRunning = YES;
         _player.physicsBody.affectedByGravity = NO;
         [_world addChild:_player];
         
+        // We have a code that is setting target node for emitter to parent node, so we need to switch the engineRunning AFTER adding node to the parent
+        _player.engineRunning = YES;
+
         // Setup alien
 //        _alien = [[TPAlien alloc]init];
 //        _alien.position = CGPointMake(self.size.width * 0.5 + _alien.size.width, self.size.height * 0.5);

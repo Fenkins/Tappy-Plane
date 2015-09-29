@@ -23,6 +23,7 @@
 		AA9FB96F1BB5D3AB0071C666 /* Aliens.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AA9FB96E1BB5D3AA0071C666 /* Aliens.atlas */; };
 		AA9FB9711BB5D3E30071C666 /* AlienAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA9FB9701BB5D3E30071C666 /* AlienAnimations.plist */; };
 		AA9FB9741BB5D7BA0071C666 /* TPAlien.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9FB9731BB5D7BA0071C666 /* TPAlien.m */; };
+		AAD5F0FB1BBAC7AF000D887D /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5F0FA1BBAC7AF000D887D /* TPScrollingNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		AA9FB9701BB5D3E30071C666 /* AlienAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AlienAnimations.plist; sourceTree = "<group>"; };
 		AA9FB9721BB5D7BA0071C666 /* TPAlien.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAlien.h; sourceTree = "<group>"; };
 		AA9FB9731BB5D7BA0071C666 /* TPAlien.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAlien.m; sourceTree = "<group>"; };
+		AAD5F0F91BBAC7AF000D887D /* TPScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPScrollingNode.h; sourceTree = "<group>"; };
+		AAD5F0FA1BBAC7AF000D887D /* TPScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				AA246CD21BB03B5C004C4081 /* Main.storyboard */,
 				AA0EAE191BB1EBA400BC9835 /* TPPlane.h */,
 				AA0EAE1A1BB1EBA400BC9835 /* TPPlane.m */,
+				AAD5F0F91BBAC7AF000D887D /* TPScrollingNode.h */,
+				AAD5F0FA1BBAC7AF000D887D /* TPScrollingNode.m */,
 				AA9FB9721BB5D7BA0071C666 /* TPAlien.h */,
 				AA9FB9731BB5D7BA0071C666 /* TPAlien.m */,
 				AA246CD51BB03B5C004C4081 /* Images.xcassets */,
@@ -275,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA246CD11BB03B5C004C4081 /* GameViewController.m in Sources */,
+				AAD5F0FB1BBAC7AF000D887D /* TPScrollingNode.m in Sources */,
 				AA9FB9741BB5D7BA0071C666 /* TPAlien.m in Sources */,
 				AA246CC91BB03B5C004C4081 /* AppDelegate.m in Sources */,
 				AA246CC61BB03B5C004C4081 /* main.m in Sources */,
