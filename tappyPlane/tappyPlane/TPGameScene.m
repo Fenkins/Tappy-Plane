@@ -9,12 +9,14 @@
 #import "TPGameScene.h"
 #import "TPPlane.h"
 #import "TPAlien.h"
+#import "TPScrollingLayer.h"
 
 @interface TPGameScene ()
 
 @property (nonatomic) TPPlane *player;
 @property (nonatomic) TPAlien *alien;
 @property (nonatomic) SKNode *world;
+@property (nonatomic) TPScrollingLayer *background;
 
 @end
 
@@ -23,6 +25,10 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
+        // Get atlas file
+        SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
+        
         // Setup physics
         self.physicsWorld.gravity = CGVectorMake(0.0, -5.5);
         
@@ -30,6 +36,18 @@
         _world = [[SKNode alloc]init];
         [self addChild:_world];
         
+        // Setup background
+        NSMutableArray *backgroundTiles = [[NSMutableArray alloc]init];
+        for (int i=0; i<3; i++) {
+            [backgroundTiles addObject:[SKSpriteNode spriteNodeWithTexture:[graphics textureNamed:@"background"]]];
+        }
+        
+        _background = [[TPScrollingLayer alloc]initWithTiles:backgroundTiles];
+        _background.position = CGPointZero;
+        _background.horyzontalScrollSpeed = -60;
+        _background.scrolling = YES;
+        [_world addChild:_background];
+                
         // Setup player
         _player = [[TPPlane alloc]init];
         _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);

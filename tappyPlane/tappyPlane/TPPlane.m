@@ -84,7 +84,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     NSMutableArray *frames = [[NSMutableArray alloc]init];
     
     // Get planes atlas
-    SKTextureAtlas *planesAtlas = [SKTextureAtlas atlasNamed:@"Planes"];
+    SKTextureAtlas *planesAtlas = [SKTextureAtlas atlasNamed:@"Graphics"];
     
     // Loop trough textureNames array and load textures
     for (NSString *textureName in textureNames) {

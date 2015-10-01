@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA0EAE181BB1DD6500BC9835 /* Planes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AA0EAE171BB1DD6500BC9835 /* Planes.atlas */; };
+		AA0EAE181BB1DD6500BC9835 /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AA0EAE171BB1DD6500BC9835 /* Graphics.atlas */; };
 		AA0EAE1B1BB1EBA400BC9835 /* TPPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0EAE1A1BB1EBA400BC9835 /* TPPlane.m */; };
 		AA1AC2291BB3043D00D2C07B /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1AC2281BB3043D00D2C07B /* PlaneAnimations.plist */; };
 		AA246CC61BB03B5C004C4081 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA246CC51BB03B5C004C4081 /* main.m */; };
@@ -38,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AA0EAE171BB1DD6500BC9835 /* Planes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Planes.atlas; sourceTree = "<group>"; };
+		AA0EAE171BB1DD6500BC9835 /* Graphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Graphics.atlas; sourceTree = "<group>"; };
 		AA0EAE191BB1EBA400BC9835 /* TPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPlane.h; sourceTree = "<group>"; };
 		AA0EAE1A1BB1EBA400BC9835 /* TPPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPlane.m; sourceTree = "<group>"; };
 		AA1AC2281BB3043D00D2C07B /* PlaneAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaneAnimations.plist; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 			children = (
 				AA3737EA1BB838FA00F7AB2E /* Particle Effects */,
 				AA9FB96E1BB5D3AA0071C666 /* Aliens.atlas */,
-				AA0EAE171BB1DD6500BC9835 /* Planes.atlas */,
+				AA0EAE171BB1DD6500BC9835 /* Graphics.atlas */,
 				AA246CC71BB03B5C004C4081 /* AppDelegate.h */,
 				AA246CC81BB03B5C004C4081 /* AppDelegate.m */,
 				AA246CCF1BB03B5C004C4081 /* GameViewController.h */,
@@ -222,7 +222,7 @@
 		AA246CB81BB03B5C004C4081 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Fenkins;
 				TargetAttributes = {
 					AA246CBF1BB03B5C004C4081 = {
@@ -265,7 +265,7 @@
 				AA9FB9711BB5D3E30071C666 /* AlienAnimations.plist in Resources */,
 				AA9FB96F1BB5D3AB0071C666 /* Aliens.atlas in Resources */,
 				AA246CD61BB03B5C004C4081 /* Images.xcassets in Resources */,
-				AA0EAE181BB1DD6500BC9835 /* Planes.atlas in Resources */,
+				AA0EAE181BB1DD6500BC9835 /* Graphics.atlas in Resources */,
 				AA246CD41BB03B5C004C4081 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +356,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -423,6 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tappyPlane/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Yep.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -433,6 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tappyPlane/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Yep.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -451,6 +454,7 @@
 				);
 				INFOPLIST_FILE = tappyPlaneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Yep.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tappyPlane.app/tappyPlane";
 			};
@@ -466,6 +470,7 @@
 				);
 				INFOPLIST_FILE = tappyPlaneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Yep.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tappyPlane.app/tappyPlane";
 			};
