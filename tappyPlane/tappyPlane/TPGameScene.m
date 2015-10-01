@@ -20,6 +20,7 @@
 
 @end
 
+static const CGFloat kMinFPS = 10.0 / 60.0;
 
 @implementation TPGameScene
 
@@ -47,7 +48,7 @@
         _background.horyzontalScrollSpeed = -60;
         _background.scrolling = YES;
         [_world addChild:_background];
-                
+        
         // Setup player
         _player = [[TPPlane alloc]init];
         _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
@@ -84,7 +85,16 @@
 }
 
 -(void)update:(NSTimeInterval)currentTime {
+    // Calculating time betweet calls
+    static NSTimeInterval lastCallTime; // this variable will retain itself between method calls (static)
+    NSTimeInterval timeElapsed = currentTime - lastCallTime;
+    if (timeElapsed > kMinFPS) {
+        timeElapsed = kMinFPS;
+    }
+    lastCallTime = currentTime;
+    
     [self.player update];
+    [self.background updateWithTimeElapsed:timeElapsed];
 }
 
 @end
