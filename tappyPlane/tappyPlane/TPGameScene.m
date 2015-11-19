@@ -17,6 +17,7 @@
 @property (nonatomic) TPAlien *alien;
 @property (nonatomic) SKNode *world;
 @property (nonatomic) TPScrollingLayer *background;
+@property (nonatomic) TPScrollingLayer *foreground;
 
 @end
 
@@ -26,6 +27,9 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
+        // Set background color
+        self.backgroundColor = [SKColor colorWithRed:213/255.0 green:237/255.0 blue:247/255.0 alpha:1.0];
         
         // Get atlas file
         SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
@@ -44,10 +48,19 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         }
         
         _background = [[TPScrollingLayer alloc]initWithTiles:backgroundTiles];
-        _background.position = CGPointZero;
+        _background.position = CGPointMake(0.0, 30.0);
         _background.horyzontalScrollSpeed = -60;
         _background.scrolling = YES;
         [_world addChild:_background];
+        
+        // Setup foreground
+        _foreground = [[TPScrollingLayer alloc]initWithTiles:@[[self generateGroundTile],
+                                                               [self generateGroundTile],
+                                                               [self generateGroundTile]]];
+        _foreground.position = CGPointZero;
+        _foreground.horyzontalScrollSpeed = -80.0;
+        _foreground.scrolling = YES;
+        [_world addChild:_foreground];
         
         // Setup player
         _player = [[TPPlane alloc]init];
@@ -67,6 +80,11 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     return self;
 }
 
+
+-(SKSpriteNode*)generateGroundTile {
+    SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
+    return [SKSpriteNode spriteNodeWithTexture:[graphics textureNamed:@"groundGrass"]];
+}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     for (UITouch *touch in touches) {
@@ -95,6 +113,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     
     [self.player update];
     [self.background updateWithTimeElapsed:timeElapsed];
+    [self.foreground updateWithTimeElapsed:timeElapsed];
 }
 
 @end
