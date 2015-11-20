@@ -83,7 +83,43 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 
 -(SKSpriteNode*)generateGroundTile {
     SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
-    return [SKSpriteNode spriteNodeWithTexture:[graphics textureNamed:@"groundGrass"]];
+    SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:[graphics textureNamed:@"groundGrass"]];
+    
+    sprite.anchorPoint = CGPointZero;
+    
+    CGFloat offsetX = sprite.frame.size.width * sprite.anchorPoint.x;
+    CGFloat offsetY = sprite.frame.size.height * sprite.anchorPoint.y;
+    
+    CGMutablePathRef path = CGPathCreateMutable();
+    
+    CGPathMoveToPoint(path, NULL, 0 - offsetX, 16 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 15 - offsetX, 18 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 65 - offsetX, 18 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 78 - offsetX, 31 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 123 - offsetX, 33 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 154 - offsetX, 22 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 186 - offsetX, 28 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 217 - offsetX, 29 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 254 - offsetX, 13 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 286 - offsetX, 8 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 317 - offsetX, 24 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 329 - offsetX, 33 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 381 - offsetX, 23 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 403 - offsetX, 17 - offsetY);
+    
+    CGPathCloseSubpath(path);
+    
+    // By using bodyWithEdgeChain we are disallowing our body from moving
+    sprite.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path];
+    
+    // We could see the border of our physicsBody thx to dis
+    SKShapeNode *bodyShape = [SKShapeNode node];
+    bodyShape.path = path;
+    bodyShape.strokeColor = [SKColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
+    bodyShape.lineWidth = 1.0;
+    [sprite addChild:bodyShape];
+    
+    return sprite;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
