@@ -92,20 +92,29 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     
     CGMutablePathRef path = CGPathCreateMutable();
     
-    CGPathMoveToPoint(path, NULL, 0 - offsetX, 16 - offsetY);
-    CGPathAddLineToPoint(path, NULL, 15 - offsetX, 18 - offsetY);
-    CGPathAddLineToPoint(path, NULL, 65 - offsetX, 18 - offsetY);
+    CGPathMoveToPoint(path, NULL, 0 - offsetX, 0 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 0 - offsetX, 17 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 16 - offsetX, 19 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 20 - offsetX, 14 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 43 - offsetX, 12 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 66 - offsetX, 17 - offsetY);
     CGPathAddLineToPoint(path, NULL, 78 - offsetX, 31 - offsetY);
-    CGPathAddLineToPoint(path, NULL, 123 - offsetX, 33 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 124 - offsetX, 33 - offsetY);
     CGPathAddLineToPoint(path, NULL, 154 - offsetX, 22 - offsetY);
-    CGPathAddLineToPoint(path, NULL, 186 - offsetX, 28 - offsetY);
-    CGPathAddLineToPoint(path, NULL, 217 - offsetX, 29 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 174 - offsetX, 21 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 185 - offsetX, 29 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 218 - offsetX, 29 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 236 - offsetX, 13 - offsetY);
     CGPathAddLineToPoint(path, NULL, 254 - offsetX, 13 - offsetY);
-    CGPathAddLineToPoint(path, NULL, 286 - offsetX, 8 - offsetY);
-    CGPathAddLineToPoint(path, NULL, 317 - offsetX, 24 - offsetY);
-    CGPathAddLineToPoint(path, NULL, 329 - offsetX, 33 - offsetY);
-    CGPathAddLineToPoint(path, NULL, 381 - offsetX, 23 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 268 - offsetX, 7 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 285 - offsetX, 7 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 298 - offsetX, 21 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 318 - offsetX, 23 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 329 - offsetX, 34 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 372 - offsetX, 34 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 382 - offsetX, 22 - offsetY);
     CGPathAddLineToPoint(path, NULL, 403 - offsetX, 17 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 403 - offsetX, 0 - offsetY);
     
     CGPathCloseSubpath(path);
     
