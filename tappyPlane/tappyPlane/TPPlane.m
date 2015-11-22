@@ -7,6 +7,7 @@
 //
 
 #import "TPPlane.h"
+#import "TPConstants.h"
 
 @interface TPPlane()
 
@@ -43,8 +44,9 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
         CGPathCloseSubpath(path);
         
         self.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path];
-        
         self.physicsBody.mass = 0.065;
+        self.physicsBody.categoryBitMask = kTPCategoryPlane;
+        self.physicsBody.contactTestBitMask = kTPCategoryGround;
         
         // Init array to hold animations in it
         _planeAnimations = [[NSMutableArray alloc]init];

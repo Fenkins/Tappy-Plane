@@ -10,6 +10,7 @@
 #import "TPPlane.h"
 #import "TPAlien.h"
 #import "TPScrollingLayer.h"
+#import "TPConstants.h"
 
 @interface TPGameScene ()
 
@@ -120,6 +121,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     
     // By using bodyWithEdgeChain we are disallowing our body from moving
     sprite.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path];
+    sprite.physicsBody.categoryBitMask = kTPCategoryGround;
     
     // We could see the border of our physicsBody thx to dis
     SKShapeNode *bodyShape = [SKShapeNode node];

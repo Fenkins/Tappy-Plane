@@ -25,6 +25,7 @@
 		AA9FB9741BB5D7BA0071C666 /* TPAlien.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9FB9731BB5D7BA0071C666 /* TPAlien.m */; };
 		AAD5F0FB1BBAC7AF000D887D /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5F0FA1BBAC7AF000D887D /* TPScrollingNode.m */; };
 		AAD5F0FE1BBACC1A000D887D /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5F0FD1BBACC1A000D887D /* TPScrollingLayer.m */; };
+		AAE3AB991C0204A8006B1251 /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3AB981C0204A8006B1251 /* TPConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		AAD5F0FA1BBAC7AF000D887D /* TPScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingNode.m; sourceTree = "<group>"; };
 		AAD5F0FC1BBACC1A000D887D /* TPScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPScrollingLayer.h; sourceTree = "<group>"; };
 		AAD5F0FD1BBACC1A000D887D /* TPScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingLayer.m; sourceTree = "<group>"; };
+		AAE3AB971C0204A8006B1251 /* TPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstants.h; sourceTree = "<group>"; };
+		AAE3AB981C0204A8006B1251 /* TPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				AA0EAE171BB1DD6500BC9835 /* Graphics.atlas */,
 				AA246CC71BB03B5C004C4081 /* AppDelegate.h */,
 				AA246CC81BB03B5C004C4081 /* AppDelegate.m */,
+				AAE3AB971C0204A8006B1251 /* TPConstants.h */,
+				AAE3AB981C0204A8006B1251 /* TPConstants.m */,
 				AA246CCF1BB03B5C004C4081 /* GameViewController.h */,
 				AA246CD01BB03B5C004C4081 /* GameViewController.m */,
 				AA246CEE1BB03BE9004C4081 /* TPGameScene.h */,
@@ -288,6 +293,7 @@
 				AAD5F0FB1BBAC7AF000D887D /* TPScrollingNode.m in Sources */,
 				AA9FB9741BB5D7BA0071C666 /* TPAlien.m in Sources */,
 				AAD5F0FE1BBACC1A000D887D /* TPScrollingLayer.m in Sources */,
+				AAE3AB991C0204A8006B1251 /* TPConstants.m in Sources */,
 				AA246CC91BB03B5C004C4081 /* AppDelegate.m in Sources */,
 				AA246CC61BB03B5C004C4081 /* main.m in Sources */,
 				AA0EAE1B1BB1EBA400BC9835 /* TPPlane.m in Sources */,
