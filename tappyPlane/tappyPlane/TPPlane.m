@@ -72,7 +72,8 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
 }
 
 -(void)setEngineRunning:(BOOL)engineRunning {
-    _engineRunning = engineRunning;
+    // By adding && !self.crashed we are making sure we cant enable engine's running state if the plane is already crashed
+    _engineRunning = engineRunning && !self.crashed;
     if (engineRunning) {
         self.puffTrailEmiter.targetNode = self.parent;
         [self actionForKey:kKeyPlaneAnimation].speed = 1;
@@ -116,6 +117,30 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     
     // Create and return animation action
     return [SKAction repeatActionForever:[SKAction animateWithTextures:frames timePerFrame:frameTime]];
+}
+
+-(void)setAccelerating:(BOOL)accelerating {
+    // By adding && !self.crashed we are making sure we cant enable acceleration state if the plane is already crashed
+    _accelerating = accelerating && !self.crashed;
+}
+
+-(void)setCrashed:(BOOL)crashed {
+    _crashed = crashed;
+    if (crashed) {
+        self.engineRunning = NO;
+        self.accelerating = NO;
+        
+    }
+}
+
+-(void)collide:(SKPhysicsBody *)body {
+    // Ignore collision if already crashed
+    if (!self.crashed) {
+        if (body.categoryBitMask == kTPCategoryGround) {
+            // Hit the ground.
+            self.crashed = YES;
+        }
+    }
 }
 
 @end

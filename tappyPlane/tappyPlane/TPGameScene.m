@@ -168,8 +168,10 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     lastCallTime = currentTime;
     
     [self.player update];
-    [self.background updateWithTimeElapsed:timeElapsed];
-    [self.foreground updateWithTimeElapsed:timeElapsed];
+    if (!self.player.crashed) {
+        [self.background updateWithTimeElapsed:timeElapsed];
+        [self.foreground updateWithTimeElapsed:timeElapsed];
+    }
 }
 
 @end
