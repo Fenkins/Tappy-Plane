@@ -134,13 +134,38 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     return sprite;
 }
 
+-(void)newGame {
+    // Resetting layers
+    self.foreground.position = CGPointZero;
+    [self.foreground layoutTiles];
+    self.background.position = CGPointZero;
+    [self.background layoutTiles];
+    
+    // Reset plane
+    self.player.position = CGPointMake(self.size.width / 2, self.size.width / 2);
+    self.player.crashed = NO;
+    self.player.engineRunning = YES;
+    
+    // This way our plane will setup straight and wont fuck around
+    self.player.physicsBody.affectedByGravity = NO;
+    self.player.physicsBody.velocity = CGVectorMake(0.0, 0.0);
+    self.player.zRotation = 0.0;
+    self.player.physicsBody.angularVelocity = 0.0;
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     for (UITouch *touch in touches) {
+        if (self.player.crashed) {
+            [self newGame];
+        } else {
+            self.player.accelerating = YES;
+            self.player.physicsBody.affectedByGravity = YES;
+        }
+        
+//  Code for alienz and stuff
 //        self.player.engineRunning = !self.player.engineRunning;
 //        [self.player setRandomColor];
 //        [self.alien changeAlien];
-        self.player.accelerating = YES;
-        self.player.physicsBody.affectedByGravity = YES;
     }
 }
 
