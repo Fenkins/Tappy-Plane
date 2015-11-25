@@ -133,6 +133,18 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     }
 }
 
+-(void)reset {
+    // Set plane's initial values
+    self.crashed = NO;
+    self.engineRunning = YES;
+    
+    // This way our plane will setup straight and wont fuck around
+    self.physicsBody.velocity = CGVectorMake(0.0, 0.0);
+    self.zRotation = 0.0;
+    self.physicsBody.angularVelocity = 0.0;
+    [self setRandomColor]; 
+}
+
 -(void)collide:(SKPhysicsBody *)body {
     // Ignore collision if already crashed
     if (!self.crashed) {

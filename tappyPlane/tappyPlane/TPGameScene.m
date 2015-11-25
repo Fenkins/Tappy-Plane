@@ -50,7 +50,6 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         }
         
         _background = [[TPScrollingLayer alloc]initWithTiles:backgroundTiles];
-        _background.position = CGPointMake(0.0, 30.0);
         _background.horyzontalScrollSpeed = -60;
         _background.scrolling = YES;
         [_world addChild:_background];
@@ -59,7 +58,6 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _foreground = [[TPScrollingLayer alloc]initWithTiles:@[[self generateGroundTile],
                                                                [self generateGroundTile],
                                                                [self generateGroundTile]]];
-        _foreground.position = CGPointZero;
         _foreground.horyzontalScrollSpeed = -80.0;
         _foreground.scrolling = YES;
         [_world addChild:_foreground];
@@ -71,8 +69,8 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         [_world addChild:_player];
         
         // We have a code that is setting target node for emitter to parent node, so we need to switch the engineRunning AFTER adding node to the parent
-        _player.engineRunning = YES;
-
+        [self newGame]; // Includes engineRunning = YES:
+        
         // Setup alien
 //        _alien = [[TPAlien alloc]init];
 //        _alien.position = CGPointMake(self.size.width * 0.5 + _alien.size.width, self.size.height * 0.5);
@@ -138,19 +136,13 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     // Resetting layers
     self.foreground.position = CGPointZero;
     [self.foreground layoutTiles];
-    self.background.position = CGPointZero;
+    self.background.position = CGPointMake(0.0, 30.0);
     [self.background layoutTiles];
     
     // Reset plane
     self.player.position = CGPointMake(self.size.width / 2, self.size.width / 2);
-    self.player.crashed = NO;
-    self.player.engineRunning = YES;
-    
-    // This way our plane will setup straight and wont fuck around
     self.player.physicsBody.affectedByGravity = NO;
-    self.player.physicsBody.velocity = CGVectorMake(0.0, 0.0);
-    self.player.zRotation = 0.0;
-    self.player.physicsBody.angularVelocity = 0.0;
+    [self.player reset];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
