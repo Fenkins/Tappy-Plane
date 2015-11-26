@@ -98,6 +98,10 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     if (self.accelerating) {
         [self.physicsBody applyForce:CGVectorMake(0.0, 100.0)];
     }
+    if (!self.crashed) {
+        // This will rotate our plane up/down 57 degrees/1radiant (400/400)
+        self.zRotation = fmaxf(fminf(self.physicsBody.velocity.dy, 400), -400) / 400;
+    }
 }
 
 -(SKAction*)animationFromArray:(NSArray*)textureNames withDuration:(CGFloat)duration {
