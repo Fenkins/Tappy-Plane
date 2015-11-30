@@ -34,8 +34,8 @@ static const CGFloat kTPSpaceBetweenObstaclesSet = 180.0;
 
 -(void)addObstacleSet {
     // Get mountains nodes
-    SKSpriteNode* mountainUp = [self createObjectForKey:(NSString*)kTPMountainUp];
-    SKSpriteNode* mountainDown = [self createObjectForKey:(NSString*)kTPMountainDown];
+    SKSpriteNode* mountainUp = [self getUnusedObjectForKey:(NSString*)kTPMountainUp];
+    SKSpriteNode* mountainDown = [self getUnusedObjectForKey:(NSString*)kTPMountainDown];
     
     // Calculate maximum variation
     CGFloat maxVariation = (mountainUp.size.height + mountainDown.size.height + kTPVerticalGap)-(self.ceiling - self.floor);
@@ -47,6 +47,25 @@ static const CGFloat kTPSpaceBetweenObstaclesSet = 180.0;
     
     // Reposition marker
     self.marker += kTPSpaceBetweenObstaclesSet;
+}
+
+// Method to reuse object which passed the left edge of the screen, or create a new one
+-(SKSpriteNode*)getUnusedObjectForKey:(NSString*)key {
+    if (self.scene) {
+        // Getting the left edge of the screen in local coordinates
+        CGFloat leftEdgeInLocalCoord = [self.scene convertPoint:CGPointMake(-self.scene.size.height*self.scene.anchorPoint.x, 0) toNode:self].x;
+        
+        // Try to find object for key at the left of the screen
+        for (SKSpriteNode* node in self.children) {
+            if (node.name == key && node.frame.origin.x + node.frame.size.width < leftEdgeInLocalCoord) {
+                // Return unused object
+                return node;
+            }
+        }
+    }
+    
+    // Couldnt find unused node for key, so creating one
+    return [self createObjectForKey:key];
 }
 
 -(SKSpriteNode*)createObjectForKey:(NSString*)key {
