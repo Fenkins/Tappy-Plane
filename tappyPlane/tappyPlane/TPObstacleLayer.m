@@ -20,6 +20,17 @@ static const CGFloat kTPVerticalGap = 90.0;
 static const CGFloat kTPSpaceBetweenObstaclesSet = 180.0;
 
 @implementation TPObstacleLayer
+-(void)reset {
+    // Loop trough child nodes & reposition them, so we could reuse them later.
+    for (SKNode *node in self.children) {
+        node.position = CGPointMake(-1000.0, 0.0);
+    }
+    // Reposition marker.
+    if (self.scene) {
+        self.marker = self.scene.size.width + kTPMarkerBuffer;
+    }
+}
+
 -(void)updateWithTimeElapsed:(NSTimeInterval)timeElapsed {
     [super updateWithTimeElapsed:timeElapsed];
     if (self.scrolling && self.scene) {
