@@ -11,6 +11,7 @@
 #import "TPAlien.h"
 #import "TPScrollingLayer.h"
 #import "TPConstants.h"
+#import "TPObstacleLayer.h"
 
 @interface TPGameScene ()
 
@@ -18,6 +19,7 @@
 @property (nonatomic) TPAlien *alien;
 @property (nonatomic) SKNode *world;
 @property (nonatomic) TPScrollingLayer *background;
+@property (nonatomic) TPObstacleLayer *obstacles;
 @property (nonatomic) TPScrollingLayer *foreground;
 
 @end
@@ -53,6 +55,14 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _background.horyzontalScrollSpeed = -60;
         _background.scrolling = YES;
         [_world addChild:_background];
+        
+        // Setup obstacles
+        _obstacles = [[TPObstacleLayer alloc]init];
+        _obstacles.horyzontalScrollSpeed = -80;
+        _obstacles.scrolling = YES;
+        _obstacles.floor = 0;
+        _obstacles.ceiling = self.size.height;
+        [_world addChild:_obstacles];
         
         // Setup foreground
         _foreground = [[TPScrollingLayer alloc]initWithTiles:@[[self generateGroundTile],
@@ -136,6 +146,10 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     // Resetting layers
     self.foreground.position = CGPointZero;
     [self.foreground layoutTiles];
+    self.obstacles.position = CGPointZero;
+    [self.obstacles reset];
+    // Obstacles wont scroll until we begin the game in touchesBegan
+    self.obstacles.scrolling = NO;
     self.background.position = CGPointMake(0.0, 30.0);
     [self.background layoutTiles];
     
@@ -152,6 +166,8 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         } else {
             self.player.accelerating = YES;
             self.player.physicsBody.affectedByGravity = YES;
+            // Obstacles will scroll now
+            self.obstacles.scrolling = YES;
         }
         
 //  Code for alienz and stuff
@@ -187,6 +203,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     [self.player update];
     if (!self.player.crashed) {
         [self.background updateWithTimeElapsed:timeElapsed];
+        [self.obstacles updateWithTimeElapsed:timeElapsed];
         [self.foreground updateWithTimeElapsed:timeElapsed];
     }
 }
