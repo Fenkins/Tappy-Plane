@@ -38,7 +38,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
         
         // Setup physics
-        self.physicsWorld.gravity = CGVectorMake(0.0, -5.5);
+        self.physicsWorld.gravity = CGVectorMake(0.0, -3.0);
         self.physicsWorld.contactDelegate = self;
         
         // Setup world
@@ -180,6 +180,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     for (UITouch *touch in touches) {
         self.player.accelerating = NO;
+        self.player.acceleratingEnded = YES;
     }
 }
 
