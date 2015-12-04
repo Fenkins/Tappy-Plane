@@ -11,4 +11,5 @@
 @interface TPConstants : NSObject
 extern const uint32_t kTPCategoryPlane;
 extern const uint32_t kTPCategoryGround;
+extern const uint32_t kTPCategoryCollectable;
 @end

@@ -16,8 +16,11 @@
 static const CGFloat kTPMarkerBuffer = 200.0;
 static const NSString* kTPMountainUp = @"MountainUp";
 static const NSString* kTPMountainDown = @"MountainDown";
+static const NSString* kTPCollectableStar = @"CollectableStar";
 static const CGFloat kTPVerticalGap = 90.0;
 static const CGFloat kTPSpaceBetweenObstaclesSet = 180.0;
+static const int kTPCollectableVerticalRange = 200.0;
+static const CGFloat kTPCollectableClearance = 50.0;
 
 @implementation TPObstacleLayer
 -(void)reset {
@@ -55,6 +58,20 @@ static const CGFloat kTPSpaceBetweenObstaclesSet = 180.0;
     // Positioning mountain nodes
     mountainUp.position = CGPointMake(self.marker, self.floor + mountainUp.size.height*0.5 - yAdjustment);
     mountainDown.position = CGPointMake(self.marker, mountainUp.position.y + mountainDown.size.height + kTPVerticalGap);
+    
+    // Get collectable star node
+    SKSpriteNode *collectable = [self getUnusedObjectForKey:(NSString*)kTPCollectableStar];
+    
+    // Position collectable
+    CGFloat midPoint = mountainUp.position.y + (mountainUp.size.height*0.5) + (kTPVerticalGap *0.5);
+    CGFloat yPosition = midPoint + arc4random_uniform(kTPCollectableVerticalRange) - arc4random_uniform(kTPCollectableVerticalRange*0.5);
+    
+    // Just in case of I dont know, so if yPos < self.floor+kTPCollectableClearance we will set yPos to self.floor+KTPCollClearance
+    // We are doint that so we wont receive stars spawned below floor/ceiling or smth? I guess?
+    yPosition = fmaxf(yPosition, self.floor + kTPCollectableClearance);
+    yPosition = fmaxf(yPosition, self.ceiling - kTPCollectableClearance);
+    
+    collectable.position = CGPointMake(self.marker + kTPSpaceBetweenObstaclesSet*0.5, yPosition);
     
     // Reposition marker
     self.marker += kTPSpaceBetweenObstaclesSet;
@@ -134,6 +151,13 @@ static const CGFloat kTPSpaceBetweenObstaclesSet = 180.0;
         
         object.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
         
+        
+        [self addChild:object];
+    } else if (key == kTPCollectableStar) {
+        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
+        object.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:object.size.width * 0.3];
+        object.physicsBody.categoryBitMask = kTPCategoryCollectable;
+        object.physicsBody.dynamic = NO;
         
         [self addChild:object];
     }
