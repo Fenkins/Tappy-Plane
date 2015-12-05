@@ -38,7 +38,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
         
         // Setup physics
-        self.physicsWorld.gravity = CGVectorMake(0.0, -3.0);
+        self.physicsWorld.gravity = CGVectorMake(0.0, -2.0);
         self.physicsWorld.contactDelegate = self;
         
         // Setup world
@@ -185,6 +185,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact {
+    // Go watch collide block in TPPlane for more details
     if (contact.bodyA.categoryBitMask == kTPCategoryPlane) {
         [self.player collide:contact.bodyB];
     } else if (contact.bodyB.categoryBitMask == kTPCategoryPlane) {

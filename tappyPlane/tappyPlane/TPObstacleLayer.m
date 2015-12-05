@@ -150,7 +150,7 @@ static const CGFloat kTPCollectableClearance = 50.0;
         CGPathCloseSubpath(path);
         
         object.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
-        
+        object.physicsBody.categoryBitMask = kTPCategoryGround;
         
         [self addChild:object];
     } else if (key == kTPCollectableStar) {
