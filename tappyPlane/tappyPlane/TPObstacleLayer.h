@@ -7,8 +7,12 @@
 //
 
 #import "TPScrollingNode.h"
+#import "TPCollectable.h"
 
 @interface TPObstacleLayer : TPScrollingNode
+
+@property (nonatomic,weak) id<TPCollectableDelegate> collectableDelegate;
+
 @property (nonatomic) CGFloat floor;
 @property (nonatomic) CGFloat ceiling;
 -(void)reset;

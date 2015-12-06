@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "TPCollectable.h"
 
 @interface TPPlane : SKSpriteNode
 

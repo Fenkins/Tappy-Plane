@@ -154,7 +154,9 @@ static const CGFloat kTPCollectableClearance = 50.0;
         
         [self addChild:object];
     } else if (key == kTPCollectableStar) {
-        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
+        object = [TPCollectable spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
+        ((TPCollectable*)object).pointValue = 1;
+        ((TPCollectable*)object).delegate = self.collectableDelegate;
         object.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:object.size.width * 0.3];
         object.physicsBody.categoryBitMask = kTPCategoryCollectable;
         object.physicsBody.dynamic = NO;

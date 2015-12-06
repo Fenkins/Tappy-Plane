@@ -58,6 +58,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         
         // Setup obstacles
         _obstacles = [[TPObstacleLayer alloc]init];
+        _obstacles.collectableDelegate = self;
         _obstacles.horyzontalScrollSpeed = -80;
         _obstacles.scrolling = YES;
         _obstacles.floor = 0;
@@ -90,6 +91,9 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     return self;
 }
 
+-(void)wasCollected:(TPCollectable *)collectable {
+    NSLog(@"Collected item value worth %d points",collectable.pointValue);
+}
 
 -(SKSpriteNode*)generateGroundTile {
     SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];

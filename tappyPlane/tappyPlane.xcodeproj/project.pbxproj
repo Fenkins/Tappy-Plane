@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA017C5A1C147AFB00762DF8 /* TPCollectable.m in Sources */ = {isa = PBXBuildFile; fileRef = AA017C591C147AFB00762DF8 /* TPCollectable.m */; };
 		AA0EAE181BB1DD6500BC9835 /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AA0EAE171BB1DD6500BC9835 /* Graphics.atlas */; };
 		AA0EAE1B1BB1EBA400BC9835 /* TPPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0EAE1A1BB1EBA400BC9835 /* TPPlane.m */; };
 		AA1AC2291BB3043D00D2C07B /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1AC2281BB3043D00D2C07B /* PlaneAnimations.plist */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA017C581C147AFB00762DF8 /* TPCollectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCollectable.h; sourceTree = "<group>"; };
+		AA017C591C147AFB00762DF8 /* TPCollectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPCollectable.m; sourceTree = "<group>"; };
 		AA0EAE171BB1DD6500BC9835 /* Graphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Graphics.atlas; sourceTree = "<group>"; };
 		AA0EAE191BB1EBA400BC9835 /* TPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPlane.h; sourceTree = "<group>"; };
 		AA0EAE1A1BB1EBA400BC9835 /* TPPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPlane.m; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				AA9FB9731BB5D7BA0071C666 /* TPAlien.m */,
 				AA81A2C81C08E4FB00EDE801 /* TPObstacleLayer.h */,
 				AA81A2C91C08E4FC00EDE801 /* TPObstacleLayer.m */,
+				AA017C581C147AFB00762DF8 /* TPCollectable.h */,
+				AA017C591C147AFB00762DF8 /* TPCollectable.m */,
 				AA246CD51BB03B5C004C4081 /* Images.xcassets */,
 				AA246CD71BB03B5C004C4081 /* LaunchScreen.xib */,
 				AA246CC31BB03B5C004C4081 /* Supporting Files */,
@@ -295,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA246CD11BB03B5C004C4081 /* GameViewController.m in Sources */,
+				AA017C5A1C147AFB00762DF8 /* TPCollectable.m in Sources */,
 				AAD5F0FB1BBAC7AF000D887D /* TPScrollingNode.m in Sources */,
 				AA81A2CA1C08E4FC00EDE801 /* TPObstacleLayer.m in Sources */,
 				AA9FB9741BB5D7BA0071C666 /* TPAlien.m in Sources */,
