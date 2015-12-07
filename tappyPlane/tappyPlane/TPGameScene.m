@@ -164,7 +164,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UITouch *touch in touches) {
+    //for (UITouch *touch in touches) {
         if (self.player.crashed) {
             [self newGame];
         } else {
@@ -178,14 +178,14 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 //        self.player.engineRunning = !self.player.engineRunning;
 //        [self.player setRandomColor];
 //        [self.alien changeAlien];
-    }
+    //}
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UITouch *touch in touches) {
+//    for (UITouch *touch in touches) {
         self.player.accelerating = NO;
         self.player.acceleratingEnded = YES;
-    }
+//    }
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact {
