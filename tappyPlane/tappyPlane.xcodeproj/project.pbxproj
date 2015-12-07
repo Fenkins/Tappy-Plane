@@ -28,6 +28,7 @@
 		AAD5F0FB1BBAC7AF000D887D /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5F0FA1BBAC7AF000D887D /* TPScrollingNode.m */; };
 		AAD5F0FE1BBACC1A000D887D /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5F0FD1BBACC1A000D887D /* TPScrollingLayer.m */; };
 		AAE3AB991C0204A8006B1251 /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3AB981C0204A8006B1251 /* TPConstants.m */; };
+		AAFB70341C1590C900227130 /* TPBitmapFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB70331C1590C900227130 /* TPBitmapFontLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		AAD5F0FD1BBACC1A000D887D /* TPScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingLayer.m; sourceTree = "<group>"; };
 		AAE3AB971C0204A8006B1251 /* TPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstants.h; sourceTree = "<group>"; };
 		AAE3AB981C0204A8006B1251 /* TPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPConstants.m; sourceTree = "<group>"; };
+		AAFB70321C1590C900227130 /* TPBitmapFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBitmapFontLabel.h; sourceTree = "<group>"; };
+		AAFB70331C1590C900227130 /* TPBitmapFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPBitmapFontLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				AA81A2C91C08E4FC00EDE801 /* TPObstacleLayer.m */,
 				AA017C581C147AFB00762DF8 /* TPCollectable.h */,
 				AA017C591C147AFB00762DF8 /* TPCollectable.m */,
+				AAFB70321C1590C900227130 /* TPBitmapFontLabel.h */,
+				AAFB70331C1590C900227130 /* TPBitmapFontLabel.m */,
 				AA246CD51BB03B5C004C4081 /* Images.xcassets */,
 				AA246CD71BB03B5C004C4081 /* LaunchScreen.xib */,
 				AA246CC31BB03B5C004C4081 /* Supporting Files */,
@@ -309,6 +314,7 @@
 				AA246CC91BB03B5C004C4081 /* AppDelegate.m in Sources */,
 				AA246CC61BB03B5C004C4081 /* main.m in Sources */,
 				AA0EAE1B1BB1EBA400BC9835 /* TPPlane.m in Sources */,
+				AAFB70341C1590C900227130 /* TPBitmapFontLabel.m in Sources */,
 				AA246CF01BB03BE9004C4081 /* TPGameScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
