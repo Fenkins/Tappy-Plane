@@ -56,6 +56,32 @@
     for (NSUInteger i = 0; i < self.text.length; i++) {
         // Get charecter in text for current pos
         unichar c = [self.text characterAtIndex:i];
+        // Build texture name from charecter and font name
+        NSString* textureName = [NSString stringWithFormat:@"%@%c", self.fontName, c];
+        
+        SKSpriteNode* letter;
+        if (i<self.children.count) {
+            // Reuse existing nodes
+            letter = (SKSpriteNode*)[self.children objectAtIndex:1];
+            letter.texture = [atlas textureNamed:textureName];
+            letter.size = letter.texture.size;
+        } else {
+            // Create a new letter node
+            letter = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:textureName]];
+            letter.anchorPoint = CGPointZero;
+            [self addChild:letter];
+        }
+        
+        letter.position = pos;
+        
+        pos.x += letter.size.width + self.letterSpacing;
+        totalSize.width += letter.size.width + self.letterSpacing;
+        if (totalSize.height < letter.size.height) {
+            totalSize.height = letter.size.height;
+        }
+    }
+    if (self.text.length) {
+        totalSize.width -= self.letterSpacing;
     }
 }
 
