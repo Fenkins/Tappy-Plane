@@ -12,6 +12,7 @@
 #import "TPScrollingLayer.h"
 #import "TPConstants.h"
 #import "TPObstacleLayer.h"
+#import "TPBitmapFontLabel.h"
 
 @interface TPGameScene ()
 
@@ -21,6 +22,8 @@
 @property (nonatomic) TPScrollingLayer *background;
 @property (nonatomic) TPObstacleLayer *obstacles;
 @property (nonatomic) TPScrollingLayer *foreground;
+@property (nonatomic) TPBitmapFontLabel *scoreLabel;
+@property (nonatomic) NSInteger score;
 
 @end
 
@@ -38,7 +41,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
         
         // Setup physics
-        self.physicsWorld.gravity = CGVectorMake(0.0, -2.0);
+        self.physicsWorld.gravity = CGVectorMake(0.0, -1.0);
         self.physicsWorld.contactDelegate = self;
         
         // Setup world
@@ -75,9 +78,13 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         
         // Setup player
         _player = [[TPPlane alloc]init];
-        _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
         _player.physicsBody.affectedByGravity = NO;
         [_world addChild:_player];
+        
+        // Setup score label
+        _scoreLabel = [[TPBitmapFontLabel alloc]initWithText:@"0" andFontName:@"number"];
+        _scoreLabel.position = CGPointMake(self.size.width/2, self.size.height-100);
+        [self addChild:_scoreLabel];
         
         // We have a code that is setting target node for emitter to parent node, so we need to switch the engineRunning AFTER adding node to the parent
         [self newGame]; // Includes engineRunning = YES:
@@ -92,7 +99,13 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 }
 
 -(void)wasCollected:(TPCollectable *)collectable {
+    self.score += collectable.pointValue;
     NSLog(@"Collected item value worth %d points",collectable.pointValue);
+}
+
+-(void)setScore:(NSInteger)score {
+    _score = score;
+    self.scoreLabel.text = [NSString stringWithFormat:@"%d",score];
 }
 
 -(SKSpriteNode*)generateGroundTile {
@@ -158,9 +171,12 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     [self.background layoutTiles];
     
     // Reset plane
-    self.player.position = CGPointMake(self.size.width / 2, self.size.width / 2);
+    self.player.position = CGPointMake(self.size.width / 3, self.size.width / 2);
     self.player.physicsBody.affectedByGravity = NO;
     [self.player reset];
+    
+    // Resetting score
+    self.score = 0;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

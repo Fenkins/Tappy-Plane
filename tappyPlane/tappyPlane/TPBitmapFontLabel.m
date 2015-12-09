@@ -40,6 +40,7 @@
     }
 }
 
+// Called each time we update the text
 -(void)updateText {
 
     // Remove unused nodes.
@@ -62,7 +63,7 @@
         SKSpriteNode* letter;
         if (i<self.children.count) {
             // Reuse existing nodes
-            letter = (SKSpriteNode*)[self.children objectAtIndex:1];
+            letter = (SKSpriteNode*)[self.children objectAtIndex:i];
             letter.texture = [atlas textureNamed:textureName];
             letter.size = letter.texture.size;
         } else {

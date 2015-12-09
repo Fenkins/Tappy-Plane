@@ -19,7 +19,7 @@ static const NSString* kTPMountainDown = @"MountainDown";
 static const NSString* kTPCollectableStar = @"CollectableStar";
 static const CGFloat kTPVerticalGap = 90.0;
 static const CGFloat kTPSpaceBetweenObstaclesSet = 180.0;
-static const int kTPCollectableVerticalRange = 200.0;
+static const int kTPCollectableVerticalRange = 100.0;
 static const CGFloat kTPCollectableClearance = 50.0;
 
 @implementation TPObstacleLayer
@@ -69,7 +69,7 @@ static const CGFloat kTPCollectableClearance = 50.0;
     // Just in case of I dont know, so if yPos < self.floor+kTPCollectableClearance we will set yPos to self.floor+KTPCollClearance
     // We are doint that so we wont receive stars spawned below floor/ceiling or smth? I guess?
     yPosition = fmaxf(yPosition, self.floor + kTPCollectableClearance);
-    yPosition = fmaxf(yPosition, self.ceiling - kTPCollectableClearance);
+    yPosition = fminf(yPosition, self.ceiling - kTPCollectableClearance);
     
     collectable.position = CGPointMake(self.marker + kTPSpaceBetweenObstaclesSet*0.5, yPosition);
     
