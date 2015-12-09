@@ -83,6 +83,14 @@
     if (self.text.length) {
         totalSize.width -= self.letterSpacing;
     }
+    
+    // Centering the text
+    // Calculating distance which we will move each letter
+    CGPoint adjustment = CGPointMake(-totalSize.width/2, -totalSize.height/2);
+    // Adding adjustment to each letter
+    for (SKNode* letter in self.children) {
+        letter.position = CGPointMake(letter.position.x+adjustment.x, letter.position.y+adjustment.y);
+    }
 }
 
 @end
