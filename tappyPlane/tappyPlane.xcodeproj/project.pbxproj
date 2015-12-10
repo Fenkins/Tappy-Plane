@@ -10,6 +10,7 @@
 		AA017C5A1C147AFB00762DF8 /* TPCollectable.m in Sources */ = {isa = PBXBuildFile; fileRef = AA017C591C147AFB00762DF8 /* TPCollectable.m */; };
 		AA0EAE181BB1DD6500BC9835 /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AA0EAE171BB1DD6500BC9835 /* Graphics.atlas */; };
 		AA0EAE1B1BB1EBA400BC9835 /* TPPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0EAE1A1BB1EBA400BC9835 /* TPPlane.m */; };
+		AA116C121C1A19240058BC0F /* TileSetGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA116C111C1A19240058BC0F /* TileSetGraphics.plist */; };
 		AA1AC2291BB3043D00D2C07B /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1AC2281BB3043D00D2C07B /* PlaneAnimations.plist */; };
 		AA246CC61BB03B5C004C4081 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA246CC51BB03B5C004C4081 /* main.m */; };
 		AA246CC91BB03B5C004C4081 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA246CC81BB03B5C004C4081 /* AppDelegate.m */; };
@@ -47,6 +48,7 @@
 		AA0EAE171BB1DD6500BC9835 /* Graphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Graphics.atlas; sourceTree = "<group>"; };
 		AA0EAE191BB1EBA400BC9835 /* TPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPlane.h; sourceTree = "<group>"; };
 		AA0EAE1A1BB1EBA400BC9835 /* TPPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPlane.m; sourceTree = "<group>"; };
+		AA116C111C1A19240058BC0F /* TileSetGraphics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TileSetGraphics.plist; sourceTree = "<group>"; };
 		AA1AC2281BB3043D00D2C07B /* PlaneAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaneAnimations.plist; sourceTree = "<group>"; };
 		AA246CC01BB03B5C004C4081 /* tappyPlane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tappyPlane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA246CC41BB03B5C004C4081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				AA1AC2281BB3043D00D2C07B /* PlaneAnimations.plist */,
 				AA9FB9701BB5D3E30071C666 /* AlienAnimations.plist */,
+				AA116C111C1A19240058BC0F /* TileSetGraphics.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				AA9FB96F1BB5D3AB0071C666 /* Aliens.atlas in Resources */,
 				AA246CD61BB03B5C004C4081 /* Images.xcassets in Resources */,
 				AA0EAE181BB1DD6500BC9835 /* Graphics.atlas in Resources */,
+				AA116C121C1A19240058BC0F /* TileSetGraphics.plist in Resources */,
 				AA246CD41BB03B5C004C4081 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

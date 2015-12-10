@@ -66,8 +66,7 @@ static const CGFloat kTPCollectableClearance = 50.0;
     CGFloat midPoint = mountainUp.position.y + (mountainUp.size.height*0.5) + (kTPVerticalGap *0.5);
     CGFloat yPosition = midPoint + arc4random_uniform(kTPCollectableVerticalRange) - arc4random_uniform(kTPCollectableVerticalRange*0.5);
     
-    // Just in case of I dont know, so if yPos < self.floor+kTPCollectableClearance we will set yPos to self.floor+KTPCollClearance
-    // We are doint that so we wont receive stars spawned below floor/ceiling or smth? I guess?
+    // We are doint that so we wont receive stars spawned below floor/ceiling
     yPosition = fmaxf(yPosition, self.floor + kTPCollectableClearance);
     yPosition = fminf(yPosition, self.ceiling - kTPCollectableClearance);
     

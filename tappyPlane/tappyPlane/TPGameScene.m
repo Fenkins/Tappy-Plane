@@ -100,12 +100,12 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 
 -(void)wasCollected:(TPCollectable *)collectable {
     self.score += collectable.pointValue;
-    NSLog(@"Collected item value worth %d points",collectable.pointValue);
+    NSLog(@"Collected item value worth %ld points",(long)collectable.pointValue);
 }
 
 -(void)setScore:(NSInteger)score {
     _score = score;
-    self.scoreLabel.text = [NSString stringWithFormat:@"%d",score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%ld",(long)score];
 }
 
 -(SKSpriteNode*)generateGroundTile {

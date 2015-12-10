@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Snow</key>
+	<dict>
+		<key>mountainDown</key>
+		<string>MountainSnowDown</string>
+		<key>mountainUp</key>
+		<string>MountainSnow</string>
+		<key>ground</key>
+		<string>groundSnow</string>
+	</dict>
+	<key>Ice</key>
+	<dict>
+		<key>mountainDown</key>
+		<string>MountainIceDown</string>
+		<key>mountainUp</key>
+		<string>MountainIce</string>
+		<key>ground</key>
+		<string>groundIce</string>
+	</dict>
+	<key>Grass</key>
+	<dict>
+		<key>mountainDown</key>
+		<string>MountainGrassDown</string>
+		<key>mountainUp</key>
+		<string>MountainGrass</string>
+		<key>ground</key>
+		<string>groundGrass</string>
+	</dict>
+	<key>Dirt</key>
+	<dict>
+		<key>mountainDown</key>
+		<string>MountainDirtDown</string>
+		<key>mountainUp</key>
+		<string>MountainDirt</string>
+		<key>ground</key>
+		<string>groundDirt</string>
+	</dict>
+</dict>
+</plist>
