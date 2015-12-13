@@ -8,6 +8,10 @@
 
 #import "TPTileSetTextureProvider.h"
 
+@interface TPTileSetTextureProvider()
+@property (nonatomic) NSMutableDictionary *tilesets;
+@end
+
 @implementation TPTileSetTextureProvider
 +(instancetype)getProvider {
     static TPTileSetTextureProvider* provider = nil;
@@ -18,6 +22,19 @@
             provider = [[TPTileSetTextureProvider alloc]init];
         }
         return provider;
+    }
+}
+
+-(void)loadTileSets {
+    self.tilesets = [[NSMutableDictionary alloc]init];
+    
+    // Get path for property list.
+    NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"TilesetGraphics" ofType:@"plist"];
+    // Load contents of file.
+    NSDictionary *tilesetList = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    // Loop trough tileset lists.
+    for (NSString* tilesetKey in tilesetList) {
+        NSDictionary* textureList = [tilesetList objectForKey:tilesetKey];
     }
 }
 @end
