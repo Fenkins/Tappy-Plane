@@ -7,6 +7,7 @@
 //
 
 #import "TPTileSetTextureProvider.h"
+#import <SpriteKit/SpriteKit.h>
 
 @interface TPTileSetTextureProvider()
 @property (nonatomic) NSMutableDictionary *tilesets;
@@ -27,6 +28,7 @@
 
 -(void)loadTileSets {
     self.tilesets = [[NSMutableDictionary alloc]init];
+    SKTextureAtlas* atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
     
     // Get path for property list.
     NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"TilesetGraphics" ofType:@"plist"];
@@ -34,7 +36,21 @@
     NSDictionary *tilesetList = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     // Loop trough tileset lists.
     for (NSString* tilesetKey in tilesetList) {
+        // Create dictionary of texture names.
         NSDictionary* textureList = [tilesetList objectForKey:tilesetKey];
+        // Create dictionary to hold textures.
+        NSMutableDictionary* textures = [[NSMutableDictionary alloc]init];
+        
+        for (NSString* textureKey in textureList) {
+            // Get texture for keys
+            SKTexture* texture = [atlas textureNamed:[textureList objectForKey:textureKey]];
+            // Insert texture to textures dictionary.
+            [textures setObject:texture forKey:textureKey];
+        }
+        
+        // Add texture dictionaryes to tilesets
+        [self.tilesets setObject:textures forKey:tilesetKey];
+        
     }
 }
 @end
