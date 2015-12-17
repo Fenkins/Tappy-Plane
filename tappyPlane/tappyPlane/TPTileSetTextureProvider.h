@@ -12,4 +12,5 @@
 
 @interface TPTileSetTextureProvider : NSObject
 +(instancetype)getProvider;
+-(void)randomizeTileSet;
 @end
