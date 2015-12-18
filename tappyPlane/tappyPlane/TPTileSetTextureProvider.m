@@ -7,7 +7,6 @@
 //
 
 #import "TPTileSetTextureProvider.h"
-#import <SpriteKit/SpriteKit.h>
 
 @interface TPTileSetTextureProvider()
 @property (nonatomic) NSMutableDictionary *tilesets;
@@ -41,6 +40,10 @@
     NSArray* tileSetkeys = [self.tilesets allKeys];
     NSString* key = [tileSetkeys objectAtIndex:arc4random_uniform((uint)tileSetkeys.count)];
     self.currentTileset = [self.tilesets objectForKey:key];
+}
+
+-(SKTexture*)getTextureForKey:(NSString *)key {
+    return [self.currentTileset objectForKey:key];
 }
 
 -(void)loadTileSets {

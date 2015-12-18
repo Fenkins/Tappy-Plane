@@ -9,8 +9,10 @@
 // This class will imply singleton pattern
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
 
 @interface TPTileSetTextureProvider : NSObject
 +(instancetype)getProvider;
 -(void)randomizeTileSet;
+-(SKTexture*)getTextureForKey:(NSString*)key;
 @end
