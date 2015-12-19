@@ -51,7 +51,7 @@
     SKTextureAtlas* atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
     
     // Get path for property list.
-    NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"TilesetGraphics" ofType:@"plist"];
+    NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"TileSetGraphics" ofType:@"plist"];
     // Load contents of file.
     NSDictionary *tilesetList = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     // Loop trough tileset lists.

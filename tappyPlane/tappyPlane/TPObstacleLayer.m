@@ -8,6 +8,7 @@
 
 #import "TPObstacleLayer.h"
 #import "TPConstants.h"
+#import "TPTileSetTextureProvider.h"
 
 @interface TPObstacleLayer()
 @property  (nonatomic) CGFloat marker;
@@ -27,6 +28,13 @@ static const CGFloat kTPCollectableClearance = 50.0;
     // Loop trough child nodes & reposition them, so we could reuse them later.
     for (SKNode *node in self.children) {
         node.position = CGPointMake(-1000.0, 0.0);
+        // Also reusing and updating textures
+        if (node.name == kTPMountainUp) {
+            ((SKSpriteNode*)node).texture = [[TPTileSetTextureProvider getProvider]getTextureForKey:@"mountainUp"];
+        }
+        if (node.name == kTPMountainDown) {
+            ((SKSpriteNode*)node).texture = [[TPTileSetTextureProvider getProvider]getTextureForKey:@"mountainDown"];
+        }
     }
     // Reposition marker.
     if (self.scene) {
@@ -100,8 +108,9 @@ static const CGFloat kTPCollectableClearance = 50.0;
     SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
     
     if (key == kTPMountainUp) {
-        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrass"]];
-        
+        // Old implementation, we will replace that one with code that will pick us texture based on the name provided in plist file according to TPTileSetTextureProvider
+        // object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrass"]];
+        object = [SKSpriteNode spriteNodeWithTexture:[[TPTileSetTextureProvider getProvider] getTextureForKey:@"mountainUp"]];
         
         
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
@@ -127,8 +136,9 @@ static const CGFloat kTPCollectableClearance = 50.0;
         
         [self addChild:object];
     } else if (key == kTPMountainDown) {
-        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrassDown"]];
-        
+        //object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrassDown"]];
+        object = [SKSpriteNode spriteNodeWithTexture:[[TPTileSetTextureProvider getProvider] getTextureForKey:@"mountainDown"]];
+
         
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
         CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;

@@ -31,7 +31,7 @@
 }
 
 -(void)changeAlien {
-[self runAction:[self.aliensAnimations objectAtIndex:arc4random_uniform(self.aliensAnimations.count)]];
+[self runAction:[self.aliensAnimations objectAtIndex:arc4random_uniform((uint)self.aliensAnimations.count)]];
     
 }
 
