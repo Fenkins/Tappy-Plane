@@ -164,6 +164,9 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     // Randomising tileset before setting layers
     [[TPTileSetTextureProvider getProvider]randomizeTileSet];
     // Resetting layers
+    for (SKSpriteNode* node in self.foreground.children) {
+        node.texture = [[TPTileSetTextureProvider getProvider]getTextureForKey:@"ground"];
+    }
     self.foreground.position = CGPointZero;
     [self.foreground layoutTiles];
     self.obstacles.position = CGPointZero;
