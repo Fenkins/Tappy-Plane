@@ -29,6 +29,7 @@
 		AAC402E61C1B21CC00EB9AEC /* TPTileSetTextureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC402E51C1B21CC00EB9AEC /* TPTileSetTextureProvider.m */; };
 		AAD5F0FB1BBAC7AF000D887D /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5F0FA1BBAC7AF000D887D /* TPScrollingNode.m */; };
 		AAD5F0FE1BBACC1A000D887D /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5F0FD1BBACC1A000D887D /* TPScrollingLayer.m */; };
+		AADAB5E71C2EBCE300B690EC /* TPChallengeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = AADAB5E61C2EBCE300B690EC /* TPChallengeProvider.m */; };
 		AAE3AB991C0204A8006B1251 /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3AB981C0204A8006B1251 /* TPConstants.m */; };
 		AAFB70341C1590C900227130 /* TPBitmapFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB70331C1590C900227130 /* TPBitmapFontLabel.m */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,8 @@
 		AAD5F0FA1BBAC7AF000D887D /* TPScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingNode.m; sourceTree = "<group>"; };
 		AAD5F0FC1BBACC1A000D887D /* TPScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPScrollingLayer.h; sourceTree = "<group>"; };
 		AAD5F0FD1BBACC1A000D887D /* TPScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingLayer.m; sourceTree = "<group>"; };
+		AADAB5E51C2EBCE300B690EC /* TPChallengeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChallengeProvider.h; sourceTree = "<group>"; };
+		AADAB5E61C2EBCE300B690EC /* TPChallengeProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChallengeProvider.m; sourceTree = "<group>"; };
 		AAE3AB971C0204A8006B1251 /* TPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstants.h; sourceTree = "<group>"; };
 		AAE3AB981C0204A8006B1251 /* TPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPConstants.m; sourceTree = "<group>"; };
 		AAFB70321C1590C900227130 /* TPBitmapFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBitmapFontLabel.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				AA9FB9731BB5D7BA0071C666 /* TPAlien.m */,
 				AA81A2C81C08E4FB00EDE801 /* TPObstacleLayer.h */,
 				AA81A2C91C08E4FC00EDE801 /* TPObstacleLayer.m */,
+				AADAB5E51C2EBCE300B690EC /* TPChallengeProvider.h */,
+				AADAB5E61C2EBCE300B690EC /* TPChallengeProvider.m */,
 				AA017C581C147AFB00762DF8 /* TPCollectable.h */,
 				AA017C591C147AFB00762DF8 /* TPCollectable.m */,
 				AAFB70321C1590C900227130 /* TPBitmapFontLabel.h */,
@@ -320,6 +325,7 @@
 				AA81A2CA1C08E4FC00EDE801 /* TPObstacleLayer.m in Sources */,
 				AA9FB9741BB5D7BA0071C666 /* TPAlien.m in Sources */,
 				AAD5F0FE1BBACC1A000D887D /* TPScrollingLayer.m in Sources */,
+				AADAB5E71C2EBCE300B690EC /* TPChallengeProvider.m in Sources */,
 				AAE3AB991C0204A8006B1251 /* TPConstants.m in Sources */,
 				AA246CC91BB03B5C004C4081 /* AppDelegate.m in Sources */,
 				AA246CC61BB03B5C004C4081 /* main.m in Sources */,

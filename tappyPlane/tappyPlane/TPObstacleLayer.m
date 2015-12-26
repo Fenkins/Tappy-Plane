@@ -9,15 +9,13 @@
 #import "TPObstacleLayer.h"
 #import "TPConstants.h"
 #import "TPTileSetTextureProvider.h"
+#import "TPConstants.h"
 
 @interface TPObstacleLayer()
 @property  (nonatomic) CGFloat marker;
 @end
 
 static const CGFloat kTPMarkerBuffer = 200.0;
-static const NSString* kTPMountainUp = @"MountainUp";
-static const NSString* kTPMountainDown = @"MountainDown";
-static const NSString* kTPCollectableStar = @"CollectableStar";
 static const CGFloat kTPVerticalGap = 90.0;
 static const CGFloat kTPSpaceBetweenObstaclesSet = 180.0;
 static const int kTPCollectableVerticalRange = 100.0;

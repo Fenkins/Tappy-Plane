@@ -12,4 +12,7 @@
 const uint32_t kTPCategoryPlane         = 0x1 << 0;
 const uint32_t kTPCategoryGround        = 0x1 << 1;
 const uint32_t kTPCategoryCollectable   = 0x1 << 2;
+const NSString* kTPMountainUp = @"MountainUp";
+const NSString* kTPMountainDown = @"MountainDown";
+const NSString* kTPCollectableStar = @"CollectableStar";
 @end
