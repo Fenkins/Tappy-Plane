@@ -48,12 +48,27 @@
     
     // Challenge 1
     NSMutableArray* challenge = [NSMutableArray array];
-    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPMountainUp andPosition:CGPointMake(0.0, 0.0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPMountainUp andPosition:CGPointMake(0.0, 105.0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPMountainDown andPosition:CGPointMake(143.0, 250.0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPCollectableStar andPosition:CGPointMake(23.0, 290.0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPCollectableStar andPosition:CGPointMake(128.0, 35.0)]];
     [self.challenges addObject:challenge];
     
     // Challenge 2
     challenge = [NSMutableArray array];
-    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPMountainUp andPosition:CGPointMake(0.0, 0.0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPMountainUp andPosition:CGPointMake(90.0, 25.0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPMountainDown andPosition:CGPointMake(0.0, 232.0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPCollectableStar andPosition:CGPointMake(100.0, 243.0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPCollectableStar andPosition:CGPointMake(152.0, 205.0)]];
+    [self.challenges addObject:challenge];
+    
+    // Challenge 3
+    challenge = [NSMutableArray array];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPMountainUp andPosition:CGPointMake(0.0, 82.0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPMountainUp andPosition:CGPointMake(122.0, 0.0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPMountainDown andPosition:CGPointMake(85.0, 320.0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPCollectableStar andPosition:CGPointMake(10.0, 213.0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:(NSString*)kTPCollectableStar andPosition:CGPointMake(81.0, 116.0)]];
     [self.challenges addObject:challenge];
 }
 @end

@@ -10,6 +10,7 @@
 #import "TPConstants.h"
 #import "TPTileSetTextureProvider.h"
 #import "TPConstants.h"
+#import "TPChallengeProvider.h"
 
 @interface TPObstacleLayer()
 @property  (nonatomic) CGFloat marker;
@@ -53,6 +54,7 @@ static const CGFloat kTPCollectableClearance = 50.0;
 }
 
 -(void)addObstacleSet {
+    /*
     // Get mountains nodes
     SKSpriteNode* mountainUp = [self getUnusedObjectForKey:(NSString*)kTPMountainUp];
     SKSpriteNode* mountainDown = [self getUnusedObjectForKey:(NSString*)kTPMountainDown];
@@ -77,9 +79,22 @@ static const CGFloat kTPCollectableClearance = 50.0;
     yPosition = fminf(yPosition, self.ceiling - kTPCollectableClearance);
     
     collectable.position = CGPointMake(self.marker + kTPSpaceBetweenObstaclesSet*0.5, yPosition);
+    */
+    
+    NSArray* challenge = [[TPChallengeProvider getProvider]getRandomChallenge];
+    
+    CGFloat furthestItem = 0.0;
+    
+    for (TPChallengeItem* item in challenge) {
+        SKSpriteNode* object = [self getUnusedObjectForKey:item.obstacleKey];
+        object.position = CGPointMake(item.position.x+self.marker, item.position.y);
+        if (item.position.x > furthestItem) {
+            furthestItem = item.position.x;
+        }
+    }
     
     // Reposition marker
-    self.marker += kTPSpaceBetweenObstaclesSet;
+    self.marker += furthestItem + kTPSpaceBetweenObstaclesSet;
 }
 
 // Method to reuse object which passed the left edge of the screen, or create a new one
@@ -105,10 +120,10 @@ static const CGFloat kTPCollectableClearance = 50.0;
     SKSpriteNode *object = nil;
     SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
     
-    if (key == kTPMountainUp) {
+    if (key == kTPMountainUp || kTPMountainUpAlternate) {
         // Old implementation, we will replace that one with code that will pick us texture based on the name provided in plist file according to TPTileSetTextureProvider
         // object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrass"]];
-        object = [SKSpriteNode spriteNodeWithTexture:[[TPTileSetTextureProvider getProvider] getTextureForKey:@"mountainUp"]];
+        object = [SKSpriteNode spriteNodeWithTexture:[[TPTileSetTextureProvider getProvider] getTextureForKey:key]];
         
         
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
@@ -133,9 +148,9 @@ static const CGFloat kTPCollectableClearance = 50.0;
         object.physicsBody.categoryBitMask = kTPCategoryGround;
         
         [self addChild:object];
-    } else if (key == kTPMountainDown) {
+    } else if (key == kTPMountainDown || kTPMountainDownAlternate) {
         //object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrassDown"]];
-        object = [SKSpriteNode spriteNodeWithTexture:[[TPTileSetTextureProvider getProvider] getTextureForKey:@"mountainDown"]];
+        object = [SKSpriteNode spriteNodeWithTexture:[[TPTileSetTextureProvider getProvider] getTextureForKey:key]];
 
         
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;

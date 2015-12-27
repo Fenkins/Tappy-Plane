@@ -14,5 +14,7 @@ extern const uint32_t kTPCategoryGround;
 extern const uint32_t kTPCategoryCollectable;
 extern const NSString* kTPMountainUp;
 extern const NSString* kTPMountainDown;
+extern const NSString* kTPMountainUpAlternate;
+extern const NSString* kTPMountainDownAlternate;
 extern const NSString* kTPCollectableStar;
 @end
