@@ -28,11 +28,8 @@ static const CGFloat kTPCollectableClearance = 50.0;
     for (SKNode *node in self.children) {
         node.position = CGPointMake(-1000.0, 0.0);
         // Also reusing and updating textures
-        if (node.name == kTPMountainUp) {
-            ((SKSpriteNode*)node).texture = [[TPTileSetTextureProvider getProvider]getTextureForKey:@"mountainUp"];
-        }
-        if (node.name == kTPMountainDown) {
-            ((SKSpriteNode*)node).texture = [[TPTileSetTextureProvider getProvider]getTextureForKey:@"mountainDown"];
+        if (node.name == kTPMountainUp || node.name == kTPMountainDown || node.name == kTPMountainUpAlternate || node.name == kTPMountainDownAlternate) {
+            ((SKSpriteNode*)node).texture = [[TPTileSetTextureProvider getProvider]getTextureForKey:node.name];
         }
     }
     // Reposition marker.
